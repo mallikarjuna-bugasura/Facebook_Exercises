@@ -1,0 +1,855 @@
+/* ---------------- HEADER ---------------- */
+/* Header background */
+.main-header {
+	width: 100%;
+}
+
+/* Remove default margin/padding */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* More icon size */
+.more-icon {
+	width: 10px;
+	height: 22px;
+	margin-bottom: -10px;
+}
+
+/* Profile banner images */
+.body-header {
+	background-image: url("./images/bg1.png"), url("./images/bd2.png");
+	background-position: left center, right center;
+	background-size: 50% 100%, 50% 100%;
+	background-repeat: no-repeat, no-repeat;
+}
+
+/* Search box */
+.search {
+	height: 56px;
+	width: 360px;
+}
+
+/* Logo spacing */
+.logo {
+	margin: 5px 5px 8px 16px;
+}
+
+/* Edit icon hover */
+.edit_styles:hover {
+	width: 110px;
+	height: 90px;
+	background-color: rgb(240, 242, 245);
+	border-radius: 5px;
+}
+
+/* Navigation tab hover */
+.tabs-right:hover {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: rgb(240, 242, 245);
+	border-radius: 5px;
+}
+
+/* Search input style */
+.fb-search {
+	width: 280px;
+	height: 40px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border-radius: 40px;
+	border: none;
+	outline: none;
+	background-color: rgb(240, 242, 245);
+	margin-left: -1px;
+	padding-left: 36px;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	background-image: url('./images/search.svg');
+	background-repeat: no-repeat;
+	background-position: 12px center;
+}
+
+/* Search placeholder */
+.fb-search::placeholder {
+	font-size: 15px;
+	color: #65676B;
+}
+
+/* Logo + Search layout */
+.logo-details {
+	display: flex;
+	flex-direction: row;
+}
+
+/* Tab container */
+.tabs-right {
+	height: 56px;
+	margin-right: 5px;
+}
+
+/* Tab icons padding */
+.tabs-right img {
+	padding: 16px 44px;
+}
+
+/* Middle section alignment */
+.middle {
+	margin-left: -16px;
+}
+
+/* Circular header icons */
+.end {
+	width: 40px;
+	height: 40px;
+	padding: 12px 10px;
+	margin-right: 5px;
+	background-color: #dddfe2e5;
+	border-radius: 50%;
+}
+
+/* Header icon image alignment */
+.end img {
+	margin-top: -2px;
+}
+
+/* Profile picture round shape */
+.profile-icon {
+	border-radius: 50%;
+}
+
+/* Profile details alignment */
+.profile-details {
+	margin-left: 140px;
+	margin-top: 9px;
+}
+
+/* Header tab padding */
+.edit {
+	padding: 16px 43px;
+	height: 56px;
+	margin-right: 5px;
+}
+
+.edits {
+	padding: 16px 42px;
+	height: 56px;
+	margin-right: 5px;
+}
+
+.games {
+	padding: 16px 43px 16px 45px;
+	height: 56px;
+	margin-right: 5px;
+}
+
+/* Body gradient background */
+.body {
+	background: linear-gradient(to bottom, #44403A, #dae1e2, #ffffff);
+}
+
+/* Profile banner */
+.profile {
+	width: 942px;
+	height: 348px;
+	margin-left: 170px;
+	margin-right: 167px;
+	border-radius: 0 0 8px 8px;
+}
+
+/* White icon filter */
+.icon-white {
+	filter: brightness(0) invert(1);
+	margin-right: 2px;
+	margin-top: -1px;
+}
+
+/* Black icon filter */
+.icon-black {
+	margin-left: -4px;
+	filter: brightness(0%);
+	margin-top: -1px;
+	width: 17px;
+	height: 18px;
+	margin-right: 2px;
+}
+
+/* ---------------- MAIN SECTION ---------------- */
+/* Main layout wrapper */
+.main {
+	margin: 25px auto;
+	display: flex;
+	gap: 20px;
+	margin-top: 30px;
+}
+
+/* Profile picture size */
+.mark-image {
+	width: 176px;
+	height: 176px;
+	border-radius: 50%;
+	margin-top: 10px;
+	border: 4px solid white;
+}
+
+/* User info section */
+.user-info {
+	margin-top: 2px;
+}
+
+/* User detail container */
+.user-section {
+	margin-left: 23.5px;
+	width: 100%;
+}
+
+/* Row layout */
+.top-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+/* Username styling */
+.user-name {
+	font-size: 32px;
+	font-weight: 790;
+	color: black;
+}
+
+/* Verified icon */
+.verify-icon {
+	width: 16px;
+	height: 16px;
+	margin-top: -9px;
+}
+
+/* Follower info container */
+.follow {
+	margin-top: -2px;
+}
+
+/* Follower text style */
+.followers {
+	font-weight: bolder;
+	color: black;
+	font-size: 15px;
+	border-top: -90px;
+}
+
+/* Buttons row */
+.buttons {
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+	margin-top: 2px;
+}
+
+/* Follow button */
+.follow-btn {
+	background: #1762ED;
+	color: white;
+	border: none;
+	width: 93px;
+	height: 36px;
+	font-weight: 900;
+	border-radius: 7px;
+}
+
+/* Search button */
+.search-btn {
+	background-color: #dddfe2e5;
+	width: 97px;
+	height: 36px;
+	border: none;
+	font-size: 15px;
+	font-weight: 900;
+	border-radius: 7px;
+	color: black;
+}
+
+/* Description text */
+.desc {
+	font-size: 15px;
+	font-weight: 500;
+	color: black;
+}
+
+/* Inline info rows */
+.info-line {
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: -8px;
+	margin-bottom: -3px;
+}
+
+/* Info links */
+.info-line a {
+	text-decoration: none;
+	font-size: 15px;
+	color: black;
+	margin-left: -3px;
+	margin-top: -1px;
+}
+
+/* Small icons in info section */
+.info-icon {
+	width: 12px;
+	height: 12px;
+	margin-left: 1px;
+	opacity: 0.8;
+	margin-right: 6px;
+}
+
+/* Dots separator */
+.dots {
+	width: 13px;
+	height: 17px;
+	margin-top: -7px;
+	padding-left: 5px;
+}
+
+/* General icon spacing */
+.icons {
+	margin-left: -0.5px;
+	margin-right: 8px;
+}
+
+.dates {
+	margin-left: -0.1px;
+	margin-right: 7.5px;
+}
+
+.last {
+	margin-left: -0.4px;
+	margin-right: 8px;
+}
+
+/* Followers image */
+.followers-img {
+	width: 98px;
+	height: 41px;
+	margin-top: 11px;
+	margin-left: -3px;
+}
+
+/* ---------------- TABS SECTION ---------------- */
+/* Active tab state */
+.active {
+	border-bottom: 3px solid #1768FA;
+	color: #1768FA;
+}
+
+/* Tab styling */
+li {
+	padding-left: 16px;
+	padding-right: 16px;
+	height: 60px;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px;
+}
+
+/* Tabs section wrapper */
+.body-tabs {
+	height: 60px;
+	border-top: 1px solid #d1d1d1;
+	margin-top: -2.5px;
+	width: 100%;
+}
+
+/* Hide tabs on small screens */
+@media(max-width:900px) {
+	.close1 {
+		display: none !important;
+	}
+}
+
+/* ---------------- LAYOUT ---------------- */
+/* First divider */
+.first-half {
+	border-bottom: 1px solid rgb(214, 207, 207);
+}
+
+/* Grey background section */
+.second-half {
+	background: #f2f2f2;
+	padding: 20px;
+}
+
+/* Grid layout */
+.layout {
+	display: grid;
+	grid-template-columns: auto auto;
+	width: 70%;
+	gap: 30px;
+	margin: auto;
+}
+
+/* Left side column */
+.left-side {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: fit-content;
+}
+
+/* Box design */
+.box {
+	background: white;
+	border-radius: 12px;
+	height: 260px;
+	overflow: hidden;
+}
+
+/* Box images */
+.box img {
+	width: 80px;
+	margin-right: 16px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+/* Right side scroll area */
+.right-side {
+	overflow-y: auto;
+	height: 900px;
+}
+
+/* Post box styling */
+.post-box {
+	background: white;
+	border-radius: 12px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Scrollbar styling */
+.right-side::-webkit-scrollbar,
+.friends::-webkit-scrollbar {
+	width: 6px;
+}
+
+.right-side::-webkit-scrollbar-thumb,
+.friends::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 10px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+	.layout {
+		grid-template-columns: 1fr;
+		height: auto;
+		width: 100%;
+	}
+
+	.posts-details {
+		overflow: visible;
+		padding-right: 0;
+	}
+}
+
+/* Details box section */
+.details-box {
+	background: white;
+	border-radius: 12px;
+	padding: 18px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Post title block */
+.post-title {
+	padding: 20px;
+	margin-top: -5px;
+}
+
+/* Section heading */
+.section-title {
+	font-size: 17px;
+	font-weight: 700;
+	margin-bottom: 12px;
+}
+
+/* Detail line */
+.detail-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+/* Detail icons */
+.detail-icon {
+	width: 22px;
+	margin-right: 10px;
+}
+
+/* See more link */
+.see-more {
+	font-size: 14px;
+	color: #65676b;
+	margin: 10px 0 20px;
+	cursor: pointer;
+}
+
+/* Smaller text */
+.sub {
+	font-size: 13px;
+	color: #777;
+	margin-left: 32px;
+	margin-top: -5px;
+}
+
+/* Friends list scroll */
+.friends {
+	overflow: auto;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Friend card */
+.friend-link {
+	padding: 10px;
+	border-radius: 12px;
+	margin: 10px;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+	width: 300px;
+}
+
+.friend-link span {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* ---------------- PROFILE DROPDOWN ---------------- */
+/* Dropdown container */
+.profile-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+/* Small dropdown arrow */
+.drop-icon {
+	position: absolute;
+	bottom: -2px;
+	right: -2px;
+	width: 16px;
+	height: 16px;
+	background: #E2E5E9;
+	border-radius: 50%;
+	padding: 2px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	background-color: #dddfe2e5;
+	border: 0.5px solid white;
+}
+
+/* Dropdown menu */
+.profile-wrapper .dropdown-menu-profile {
+	position: absolute;
+	top: 55px;
+	right: 0;
+	background: white;
+	border: 1px solid #ccc;
+	width: 150px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: none;
+	z-index: 9999;
+	border-radius: 6px;
+}
+
+/* Dropdown items */
+.profile-wrapper .dropdown-menu-profile li {
+	padding: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Dropdown hover */
+.profile-wrapper .dropdown-menu-profile li:hover {
+	background: #f2f2f2;
+}
+
+/* ---------------- POST STYLING ---------------- */
+/* Post header height */
+.head {
+	height: 60px;
+}
+
+/* Profile pic inside post */
+.post-header img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin: 12px 8px 8px 8px;
+}
+
+/* tiny icons in post header */
+.posts-icon {
+	width: 11px !important;
+	height: 11px !important;
+	margin-left: -3px !important;
+	margin-top: 10px !important;
+}
+
+/* Post username link */
+.post-header a {
+	font-size: 15px;
+	font-weight: bolder;
+	color: black;
+	margin-right: 6px;
+}
+
+/* Post header row */
+.post-header {
+	display: flex;
+}
+
+/* Post detail block */
+.post-details {
+	margin-top: 6px;
+}
+
+.post-details p {
+	margin-top: -6px;
+}
+
+/* Three dots icon */
+.three-dots img {
+	margin-left: 261px;
+	width: 20px;
+	height: 20px;
+}
+
+/* Post content padding */
+.middle-content {
+	padding: 10px;
+}
+
+/* Reactions row */
+.emojis {
+	margin-left: 14px;
+}
+
+.emojis img {
+	width: 18px;
+	height: 18px;
+}
+
+/* Footer reactions wrapper */
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Comment/share spacing */
+.message {
+	margin-left: 4px;
+	margin-right: 12px;
+}
+
+.share {
+	margin-left: 4px;
+	margin-right: 6px;
+}
+
+/* User options section */
+.user-options {
+	display: inline-block;
+	width: 140px !important;
+	height: 44px;
+	margin-left: 20px;
+}
+
+.user-options img {
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+/* Reaction buttons row */
+.mains {
+	display: flex;
+}
+
+/* Post text */
+.content {
+	color: black;
+	margin-top: 14px;
+}
+
+a {
+	margin-top: 1px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+/* Tablet view */
+@media (max-width: 900px) {
+	.user-options {
+		width: 100px !important;
+	}
+
+	.main {
+		width: 95%;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.top-row {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.buttons {
+		justify-content: center;
+	}
+
+	.mark-image {
+		margin: auto;
+		margin-top: -80px;
+	}
+
+	.profile {
+		width: 100%;
+		height: 350px;
+		margin-left: -3px;
+		margin-right: -167px;
+	}
+
+	.fb-search {
+		width: 20px;
+	}
+
+	.middle {
+		margin-left: -280px;
+	}
+
+	.edit_styles {
+		padding: 10px;
+		height: 56px;
+		margin-right: 5px;
+	}
+
+	.edit_styles img {
+		padding: 16px 22px;
+	}
+
+	.profile-details {
+		margin-left: -2px;
+	}
+
+	.logo-details {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.layout {
+		margin: 0;
+	}
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+	.user-options {
+		width: 70px !important;
+	}
+
+	.three-dots img {
+		margin-left: 100px;
+	}
+
+	.info-line {
+		margin-left: 12%;
+	}
+
+	.main {
+		margin-left: -10%;
+	}
+
+	.main-header {
+		margin-left: -0.7%;
+	}
+
+	.left-side {
+		width: 100%;
+	}
+
+	.profile {
+		width: 100%;
+		height: 210px;
+		margin-left: -3px;
+		margin-right: -167px;
+	}
+
+	.name {
+		font-size: 24px;
+	}
+
+	.middle {
+		display: none;
+	}
+
+	.profile-details {
+		margin-left: -60%;
+	}
+
+	.logo-details {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+/* Large screen adjustments */
+@media (min-width: 901px) {
+	.layout {
+		gap: 20px;
+	}
+
+	.post-box {
+		width: 500px;
+	}
+
+	.main {
+		margin-left: 170px;
+		margin-right: 167px;
+		margin-top: -1px;
+	}
+
+	.mark-image {
+		margin-left: 7px;
+		margin-top: 25px;
+		border: 4px solid white;
+	}
+
+	.top-row {
+		margin-top: 35px;
+	}
+
+	.follow-btn {
+		background: #1762ED;
+		font-size: 15px;
+		margin-top: -24px;
+	}
+
+	.search-btn {
+		margin-top: -24px;
+		margin-left: 1px;
+	}
+
+	.body-tabs {
+		width: 70%;
+		margin: auto;
+	}
+}
