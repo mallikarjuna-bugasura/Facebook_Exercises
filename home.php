@@ -127,47 +127,42 @@ $friends = $conn->query($friends_sql);
 <body>
 
 	<!-- TOP HEADER SECTION -->
-	<div class="first-half">
+	<div class="logo-details">
 
-		<!-- NAVIGATION BAR -->
-		<div class="main-header">
-			<div class="logo-details">
+		<!-- Logo + search bar -->
+		<div class="search">
+			<img src="./images/logo.svg" alt="" class="logo">
+			<input type="text" class="fb-search" placeholder="Search Facebook">
+		</div>
 
-				<!-- Logo + search bar -->
-				<div class="search">
-					<img src="./images/logo.svg" alt="" class="logo">
-					<input type="text" class="fb-search" placeholder="Search Facebook">
-				</div>
+		<!-- Middle navigation icons -->
+		<div class="middle">
+			<span class="edit_styles"><img src="./images/home.svg" alt=""></span>
+			<span class="edit_styles middle-icons"><img src="./images/insta.svg" alt=""></span>
+			<span class="edit_styles middle-icons"><img src="./images/market.svg" alt=""></span>
+			<span class="edit_styles middle-last"><img src="./images/friends.svg" alt=""></span>
+			<span class="edit_styles middle-last"><img src="./images/gaming.svg" alt=""></span>
+		</div>
 
-				<!-- Middle navigation icons -->
-				<div class="middle">
-					<span class="tabs-right edit_styles"><img src="./images/home.svg" alt=""></span>
-					<span class="edit edit_styles"><img src="./images/insta.svg" alt=""></span>
-					<span class="tabs-right edit_styles"><img src="./images/market.svg" alt=""></span>
-					<span class="edits edit_styles"><img src="./images/friends.svg" alt=""></span>
-					<span class="games edit_styles"><img src="./images/gaming.svg" alt=""></span>
-				</div>
+		<!-- Right profile icons -->
+		<div class="profile-details">
+			<span class="end"><img src="./images/menu.svg" alt="" class="last"></span>
+			<span class="end"><img src="./images/message.svg" alt="" class="last"></span>
+			<span class="end"><img src="./images/noti.svg" alt="" class="last"></span>
 
-				<!-- Right profile icons -->
-				<div class="profile-details">
-					<span class="end"><img src="./images/menu.svg" alt=""></span>
-					<span class="end"><img src="./images/message.svg" alt=""></span>
-					<span class="end"><img src="./images/noti.svg" alt=""></span>
+			<!-- Profile dropdown -->
+			<span class="profiles profile-wrapper end">
+				<img src="./images/village.jpg" class="right-icons profile-icon" height="40" width="40">
+				<img src="./images/drop.svg" class="drop-icon">
+				<!-- Dropdown menu -->
+				<ul class="dropdown-menu-profile">
+					<li><a href="profile.php?uid=<?= $logged_user_id ?>">Profile</a></li>
+					<li><a href="logout.php">Logout</a></li>
+				</ul>
 
-					<!-- Profile dropdown -->
-					<span class="profiles profile-wrapper">
-						<img src="./images/village.jpg" class="right-icons profile-icon" height="40" width="40">
-						<img src="./images/drop.svg" class="drop-icon">
-
-						<!-- Dropdown menu -->
-						<ul class="dropdown-menu-profile">
-							<li><a href="profile.php?uid=<?= $logged_user_id ?>">Profile</a></li>
-							<li><a href="logout.php">Logout</a></li>
-						</ul>
-
-					</span>
-				</div>
-			</div>
+			</span>
+		</div>
+	</div>
 		</div>
 
 		<!-- PROFILE BANNER -->
@@ -220,7 +215,7 @@ $friends = $conn->query($friends_sql);
 
 					<!-- Public info line (education, work, etc) -->
 					<p class="info-line">
-						<img src="./images/public.svg" class="info-icon">
+						<img src="./images/public.svg" class="info-icon public-figure">
 						<a href="#">Public figure</a>
 						<span class="dots">.</span>
 
@@ -228,7 +223,7 @@ $friends = $conn->query($friends_sql);
 						<a href="#">Palo Alto, California</a>
 						<span class="dots">.</span>
 
-						<img src="./images/meta.svg" class="info-icon">
+						<img src="./images/meta.svg" class="info-icon public-figure">
 						<a href="#">Meta</a>
 						<span class="dots">.</span>
 
@@ -236,7 +231,7 @@ $friends = $conn->query($friends_sql);
 						<a href="#">Biohub</a>
 						<span class="dots">.</span>
 
-						<img src="./images/education.svg" class="info-icon last">
+						<img src="./images/education.svg" class="info-icon">
 						<a href="#">Harvard University</a>
 					</p>
 
@@ -349,7 +344,7 @@ $friends = $conn->query($friends_sql);
 				<!-- Add new post form -->
 				<div class="post-box">
 					<form method="POST">
-						<textarea name="new_post" rows="3" placeholder="Write something..."></textarea><br>
+						<textarea name="new_post" placeholder="Write something..." style="width:100% ; border:none"></textarea><br>
 						<button type="submit">Add Post</button>
 					</form>
 				</div>
