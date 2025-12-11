@@ -1,7 +1,134 @@
 /* ---------------- HEADER ---------------- */
-/* Header background */
-.main-header {
-	width: 100%;
+.logo-details {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	height: 56px;
+	padding: 0px 8px;
+	align-items: center;
+	margin-left: 8px;
+}
+
+.search {
+	float: right;
+}
+
+.middle {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 1px;
+}
+
+.profile-details {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.search {
+	display: flex;
+	align-items: flex-start;
+	/* push items UP */
+	gap: 10px;
+	/* optional spacing */
+}
+
+.fb-search {
+	width: 280px;
+	height: 40px;
+	border-radius: 40px;
+	border: none;
+	outline: none;
+	background-color: rgb(240, 242, 245);
+	margin-left: -2px;
+	padding-left: 36px;
+	font-size: 15px;
+	font-family: Arial, sans-serif;
+	background-image: url('./images/search.svg');
+	background-repeat: no-repeat;
+	background-position: 12px center;
+	padding-bottom: 2px;
+}
+
+.edit_styles {
+	height: 56px;
+}
+
+.edit_styles img {
+	padding: 16px 43px;
+	margin-right: 8px;
+}
+
+.end {
+	margin: 8px 8px 8px 0px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #dddfe2e5;
+}
+
+.profile-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.profile-wrapper .dropdown-menu-profile {
+	position: absolute;
+	top: 55px;
+	right: 0;
+	background: white;
+	border: 1px solid #ccc;
+	width: 150px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: none;
+	z-index: 9999;
+	border-radius: 6px;
+}
+
+/* Dropdown items */
+.profile-wrapper .dropdown-menu-profile li {
+	padding: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Dropdown hover */
+.profile-wrapper .dropdown-menu-profile li:hover {
+	background: #f2f2f2;
+}
+
+.profile-icon {
+	border-radius: 50%;
+}
+
+.drop-icon {
+	position: absolute;
+	bottom: -2px;
+	right: -2px;
+	width: 16px;
+	height: 16px;
+	background: #E2E5E9;
+	border-radius: 50%;
+	padding: 2px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	background-color: #dddfe2e5;
+	border: 0.5px solid white;
+}
+
+.last {
+	margin: 10px;
+}
+
+.middle-icons {
+	margin-left: 2px;
+}
+
+.middle-last {
+	margin-left: 1px;
+	margin-right: 1px;
 }
 
 /* Remove default margin/padding */
@@ -25,121 +152,15 @@ body {
 	background-repeat: no-repeat, no-repeat;
 }
 
-/* Search box */
-.search {
-	height: 56px;
-	width: 360px;
-}
-
-/* Logo spacing */
-.logo {
-	margin: 5px 5px 8px 16px;
-}
-
 /* Edit icon hover */
 .edit_styles:hover {
-	width: 110px;
-	height: 90px;
 	background-color: rgb(240, 242, 245);
 	border-radius: 5px;
-}
-
-/* Navigation tab hover */
-.tabs-right:hover {
-	padding-top: 15px;
-	padding-bottom: 15px;
-	background-color: rgb(240, 242, 245);
-	border-radius: 5px;
-}
-
-/* Search input style */
-.fb-search {
-	width: 280px;
-	height: 40px;
-	margin-top: 8px;
-	margin-bottom: 8px;
-	border-radius: 40px;
-	border: none;
-	outline: none;
-	background-color: rgb(240, 242, 245);
-	margin-left: -1px;
-	padding-left: 36px;
-	font-size: 14px;
-	font-family: Arial, sans-serif;
-	background-image: url('./images/search.svg');
-	background-repeat: no-repeat;
-	background-position: 12px center;
-}
-
-/* Search placeholder */
-.fb-search::placeholder {
-	font-size: 15px;
-	color: #65676B;
-}
-
-/* Logo + Search layout */
-.logo-details {
-	display: flex;
-	flex-direction: row;
-}
-
-/* Tab container */
-.tabs-right {
-	height: 56px;
-	margin-right: 5px;
-}
-
-/* Tab icons padding */
-.tabs-right img {
-	padding: 16px 44px;
-}
-
-/* Middle section alignment */
-.middle {
-	margin-left: -16px;
-}
-
-/* Circular header icons */
-.end {
-	width: 40px;
-	height: 40px;
-	padding: 12px 10px;
-	margin-right: 5px;
-	background-color: #dddfe2e5;
-	border-radius: 50%;
-}
-
-/* Header icon image alignment */
-.end img {
-	margin-top: -2px;
-}
-
-/* Profile picture round shape */
-.profile-icon {
-	border-radius: 50%;
-}
-
-/* Profile details alignment */
-.profile-details {
-	margin-left: 140px;
-	margin-top: 9px;
 }
 
 /* Header tab padding */
 .edit {
 	padding: 16px 43px;
-	height: 56px;
-	margin-right: 5px;
-}
-
-.edits {
-	padding: 16px 42px;
-	height: 56px;
-	margin-right: 5px;
-}
-
-.games {
-	padding: 16px 43px 16px 45px;
 	height: 56px;
 	margin-right: 5px;
 }
@@ -151,10 +172,9 @@ body {
 
 /* Profile banner */
 .profile {
-	width: 942px;
 	height: 348px;
-	margin-left: 170px;
-	margin-right: 167px;
+	margin-left: 13.3%;
+	margin-right: 13.05%;
 	border-radius: 0 0 8px 8px;
 }
 
@@ -178,6 +198,7 @@ body {
 /* ---------------- MAIN SECTION ---------------- */
 /* Main layout wrapper */
 .main {
+	width: 942px;
 	margin: 25px auto;
 	display: flex;
 	gap: 20px;
@@ -224,6 +245,7 @@ body {
 	width: 16px;
 	height: 16px;
 	margin-top: -9px;
+	margin-left: 5px;
 }
 
 /* Follower info container */
@@ -285,6 +307,7 @@ body {
 	align-items: center;
 	margin-top: -8px;
 	margin-bottom: -3px;
+	padding-left: 1px;
 }
 
 /* Info links */
@@ -315,7 +338,7 @@ body {
 
 /* General icon spacing */
 .icons {
-	margin-left: -0.5px;
+	margin-left: -0.3px;
 	margin-right: 8px;
 }
 
@@ -324,17 +347,17 @@ body {
 	margin-right: 7.5px;
 }
 
-.last {
-	margin-left: -0.4px;
-	margin-right: 8px;
+.public-figure {
+	margin-left: -0.2px;
 }
+
 
 /* Followers image */
 .followers-img {
 	width: 98px;
 	height: 41px;
-	margin-top: 11px;
-	margin-left: -3px;
+	margin-top: 11.4px;
+	margin-left: -4px !important;
 }
 
 /* ---------------- TABS SECTION ---------------- */
@@ -362,8 +385,8 @@ li {
 .body-tabs {
 	height: 60px;
 	border-top: 1px solid #d1d1d1;
-	margin-top: -2.5px;
 	width: 100%;
+	margin-top: -3px !important;
 }
 
 /* Hide tabs on small screens */
@@ -374,10 +397,7 @@ li {
 }
 
 /* ---------------- LAYOUT ---------------- */
-/* First divider */
-.first-half {
-	border-bottom: 1px solid rgb(214, 207, 207);
-}
+
 
 /* Grey background section */
 .second-half {
@@ -532,11 +552,7 @@ li {
 }
 
 /* ---------------- PROFILE DROPDOWN ---------------- */
-/* Dropdown container */
-.profile-wrapper {
-	position: relative;
-	display: inline-block;
-}
+
 
 /* Small dropdown arrow */
 .drop-icon {
@@ -554,34 +570,9 @@ li {
 	border: 0.5px solid white;
 }
 
-/* Dropdown menu */
-.profile-wrapper .dropdown-menu-profile {
-	position: absolute;
-	top: 55px;
-	right: 0;
-	background: white;
-	border: 1px solid #ccc;
-	width: 150px;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: none;
-	z-index: 9999;
-	border-radius: 6px;
-}
 
-/* Dropdown items */
-.profile-wrapper .dropdown-menu-profile li {
-	padding: 10px;
-	font-size: 14px;
-	cursor: pointer;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
 
-/* Dropdown hover */
-.profile-wrapper .dropdown-menu-profile li:hover {
-	background: #f2f2f2;
-}
+
 
 /* ---------------- POST STYLING ---------------- */
 /* Post header height */
@@ -732,28 +723,21 @@ a {
 		width: 20px;
 	}
 
-	.middle {
-		margin-left: -280px;
-	}
+
 
 	.edit_styles {
-		padding: 10px;
+		padding: 0.78%;
 		height: 56px;
-		margin-right: 5px;
+		margin-right: 0.39%;
 	}
 
 	.edit_styles img {
 		padding: 16px 22px;
 	}
 
-	.profile-details {
-		margin-left: -2px;
-	}
 
-	.logo-details {
-		display: flex;
-		justify-content: space-between;
-	}
+
+
 
 	.layout {
 		margin: 0;
@@ -778,9 +762,10 @@ a {
 		margin-left: -10%;
 	}
 
-	.main-header {
-		margin-left: -0.7%;
+	.middle {
+		display: none;
 	}
+
 
 	.left-side {
 		width: 100%;
@@ -788,7 +773,7 @@ a {
 
 	.profile {
 		width: 100%;
-		height: 210px;
+		height: 13.125rem;
 		margin-left: -3px;
 		margin-right: -167px;
 	}
@@ -799,10 +784,6 @@ a {
 
 	.middle {
 		display: none;
-	}
-
-	.profile-details {
-		margin-left: -60%;
 	}
 
 	.logo-details {
@@ -822,7 +803,7 @@ a {
 	}
 
 	.main {
-		margin-left: 170px;
+		margin-left: 13.3%;
 		margin-right: 167px;
 		margin-top: -1px;
 	}
