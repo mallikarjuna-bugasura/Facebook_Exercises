@@ -162,100 +162,97 @@ $friends = $conn->query($friends_sql);
 
 			</span>
 		</div>
+	</div>	
+	<!-- PROFILE BANNER -->
+	<div class="body">
+		<div class="body-header">
+			<img src="./images/main.png" alt="" class="profile">
+		</div>
 	</div>
+
+	<!-- USER PROFILE SECTION -->
+	<div class="row main">
+
+		<!-- Left: Profile image -->
+		<div class="col-lg-2">
+			<img src="./images/mark.jpg" alt="" class="mark-image">
 		</div>
 
-		<!-- PROFILE BANNER -->
-		<div class="body">
-			<div class="body-header">
-				<img src="./images/main.png" alt="" class="profile">
-			</div>
-		</div>
+		<!-- Right: User details -->
+		<div class="col-lg-10 user-section">
+			<div class="top-row">
 
-		<!-- USER PROFILE SECTION -->
-		<div class="row main">
-
-			<!-- Left: Profile image -->
-			<div class="col-lg-2">
-				<img src="./images/mark.jpg" alt="" class="mark-image">
-			</div>
-
-			<!-- Right: User details -->
-			<div class="col-lg-10 user-section">
-				<div class="top-row">
-
-					<!-- User name, verification badge -->
-					<div>
-						<a href="#" class="user-name">Mark Zuckerberg</a>
-						<img src="./images/blue.svg" alt="" class="verify-icon">
-						<br>
-						<div class="follow">
-							<a href="#" class="followers">120M followers</a>
-						</div>
+				<!-- User name, verification badge -->
+				<div>
+					<a href="#" class="user-name">Mark Zuckerberg</a>
+					<img src="./images/blue.svg" alt="" class="verify-icon">
+					<br>
+					<div class="follow">
+						<a href="#" class="followers">120M followers</a>
 					</div>
-
-					<!-- Follow and search buttons -->
-					<div class="buttons">
-						<button class="btn follow-btn">
-							<img src="https://static.xx.fbcdn.net/rsrc.php/v4/yw/r/LJ8KuNpi23A.png" class="icon-white">
-							Follow
-						</button>
-
-						<button class="btn search-btn">
-							<img src="./images/search.svg" class="icon-black" height="18" width="18">
-							Search
-						</button>
-					</div>
-
 				</div>
 
-				<!-- User bio + public info -->
-				<div class="user-info">
-					<p class="desc">Bringing the world closer together.</p>
+				<!-- Follow and search buttons -->
+				<div class="buttons">
+					<button class="btn follow-btn">
+						<img src="https://static.xx.fbcdn.net/rsrc.php/v4/yw/r/LJ8KuNpi23A.png" class="icon-white">
+						Follow
+					</button>
 
-					<!-- Public info line (education, work, etc) -->
-					<p class="info-line">
-						<img src="./images/public.svg" class="info-icon public-figure">
-						<a href="#">Public figure</a>
-						<span class="dots">.</span>
-
-						<img src="./images/location.svg" class="info-icon icons">
-						<a href="#">Palo Alto, California</a>
-						<span class="dots">.</span>
-
-						<img src="./images/meta.svg" class="info-icon public-figure">
-						<a href="#">Meta</a>
-						<span class="dots">.</span>
-
-						<img src="./images/meta.svg" class="info-icon dates">
-						<a href="#">Biohub</a>
-						<span class="dots">.</span>
-
-						<img src="./images/education.svg" class="info-icon">
-						<a href="#">Harvard University</a>
-					</p>
-
-					<!-- Followers images -->
-					<p class="followers">
-						<img src="./images/followings.png" class="followers-img" alt="">
-					</p>
+					<button class="btn search-btn">
+						<img src="./images/search.svg" class="icon-black" height="18" width="18">
+						Search
+					</button>
 				</div>
+
+			</div>
+
+			<!-- User bio + public info -->
+			<div class="user-info">
+				<p class="desc">Bringing the world closer together.</p>
+
+				<!-- Public info line (education, work, etc) -->
+				<p class="info-line">
+					<img src="./images/public.svg" class="info-icon public-figure">
+					<a href="#">Public figure</a>
+					<span class="dots">.</span>
+
+					<img src="./images/location.svg" class="info-icon icons">
+					<a href="#">Palo Alto, California</a>
+					<span class="dots">.</span>
+
+					<img src="./images/meta.svg" class="info-icon public-figure">
+					<a href="#">Meta</a>
+					<span class="dots">.</span>
+
+					<img src="./images/meta.svg" class="info-icon dates">
+					<a href="#">Biohub</a>
+					<span class="dots">.</span>
+
+					<img src="./images/education.svg" class="info-icon">
+					<a href="#">Harvard University</a>
+				</p>
+
+				<!-- Followers images -->
+				<p class="followers">
+					<img src="./images/followings.png" class="followers-img" alt="">
+				</p>
 			</div>
 		</div>
-
-		<!-- PROFILE NAVIGATION TABS -->
-		<div class="body-tabs">
-			<ul class="nav nav-tabs">
-				<li class="active">All</li>
-				<li>About</li>
-				<li>Photos</li>
-				<li class="close1">Friends</li>
-				<li class="close1">Reels</li>
-				<li>More <span class="caret more-icon"></span></li>
-			</ul>
-		</div>
-
 	</div>
+
+	<!-- PROFILE NAVIGATION TABS -->
+	<div class="body-tabs">
+		<ul class="nav nav-tabs">
+			<li class="active">All</li>
+			<li>About</li>
+			<li>Photos</li>
+			<li class="close1">Friends</li>
+			<li class="close1">Reels</li>
+			<li>More <span class="caret more-icon"></span></li>
+		</ul>
+	</div>
+
 
 	<!-- SECOND HALF LAYOUT -->
 	<div class="second-half">
