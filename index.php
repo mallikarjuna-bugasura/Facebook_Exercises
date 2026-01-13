@@ -18,9 +18,9 @@
 
 		// If login success, store user details in session
 		if($res->num_rows == 1){
-			$u = $res->fetch_assoc();
-			$_SESSION['user_id'] = $u['user_id'];
-			$_SESSION['username']=$u['name'];
+			$user = $res->fetch_assoc();
+			$_SESSION['user_id'] = $user['user_id'];
+			$_SESSION['username']=$user['name'];
 			echo "success";
 		} else {
 			// Return invalid if no match
