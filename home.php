@@ -40,8 +40,8 @@
 	$view_user_image = $view_user['image_path'];
 
 	// Function to render a single post
-	function render_post($p, $username, $image) {
-		$formatted_date = date("d F Y", strtotime($p['posting_date']));
+	function render_post($posts, $username, $image) {
+		$formatted_date = date("d F Y", strtotime($posts['posting_date']));
 		echo <<<HTML
 			<div class="post-box">
 				<div class="post-header">
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 				<div class="middle-content">
-					<p>{$p['post']}</p>
+					<p>{$posts['post']}</p>
 				</div>
 				<div class="footer">
 					<div class="footer-content">
@@ -110,8 +110,8 @@
 	$friends_sql = "SELECT user_id, name, image_path FROM tUser WHERE user_id IN (SELECT friend_id FROM tFriends WHERE user_id=$view_uid)";
 	$friends_res = $conn->query($friends_sql);
 	$friends_arr = [];
-	while($f = $friends_res->fetch_assoc()){
-		$friends_arr[] = $f;
+	while($friends = $friends_res->fetch_assoc()){
+		$friends_arr[] = $friends;
 	}
 
 	// Handle profile update
@@ -446,7 +446,7 @@
 						
 						<!-- Display wall posts -->
 						<div id="wall_posts">
-							<?php while ($p = $all_posts->fetch_assoc()) { render_post($p, $view_user_name, $view_user_image); } ?>
+							<?php while ($posts = $all_posts->fetch_assoc()) { render_post($posts, $view_user_name, $view_user_image); } ?>
 						</div>
 					</div>
 				</div>
@@ -498,10 +498,10 @@
 					
 					<!-- Friends list -->
 					<div class="all-friends">
-						<?php foreach($friends_arr as $f){ ?>
-							<a href="?uid=<?= $f['user_id'] ?>" class="friend-details friend-box-link">
-								<img src="<?= $f['image_path'] ?>" class="friend-img">
-								<span><b><?= $f['name'] ?></b></span>
+						<?php foreach($friends_arr as $friends){ ?>
+							<a href="?uid=<?= $friends['user_id'] ?>" class="friend-details friend-box-link">
+								<img src="<?= $friends['image_path'] ?>" class="friend-img">
+								<span><b><?= $friends['name'] ?></b></span>
 							</a>
 						<?php } ?>
 					</div>
