@@ -15,7 +15,9 @@
 
 	// Fetch logged-in user details
 	$logged_user_id = $_SESSION['user_id'];
-	$logged_user_sql = "SELECT name, image_path FROM tUser WHERE user_id=$logged_user_id";
+	$logged_user_sql = "SELECT name, image_path 
+						FROM tUser 
+						WHERE user_id=$logged_user_id";
 	$logged_user_res = $conn->query($logged_user_sql);
 	$logged_user = $logged_user_res->fetch_assoc();
 	$logged_user_name = $logged_user['name'];
@@ -28,12 +30,16 @@
 	}
 
 	// Fetch editable details of logged-in user
-	$edit_sql = "SELECT name, email_id, phone, address FROM tUser WHERE user_id=$logged_user_id";
+	$edit_sql = "SELECT name, email_id, phone, address 
+				 FROM tUser 
+				 WHERE user_id=$logged_user_id";
 	$edit_res = $conn->query($edit_sql);
 	$edit_user = $edit_res->fetch_assoc();
 
 	// Fetch details of the profile being viewed
-	$view_user_sql = "SELECT name, image_path FROM tUser WHERE user_id=$view_uid";
+	$view_user_sql = "SELECT name, image_path 
+					  FROM tUser 
+					  WHERE user_id=$view_uid";
 	$view_user_res = $conn->query($view_user_sql);
 	$view_user = $view_user_res->fetch_assoc();
 	$view_user_name = $view_user['name'];
@@ -103,11 +109,18 @@
 	}
 
 	// Fetch all posts of the viewed user
-	$post_sql = "SELECT * FROM tWall WHERE user_id=$view_uid ORDER BY posting_date DESC";
+	$post_sql = "SELECT * 
+				 FROM tWall 
+				 WHERE user_id=$view_uid 
+				 ORDER BY posting_date DESC";
 	$all_posts = $conn->query($post_sql);
 
 	// Fetch friends of the viewed user
-	$friends_sql = "SELECT user_id, name, image_path FROM tUser WHERE user_id IN (SELECT friend_id FROM tFriends WHERE user_id=$view_uid)";
+	$friends_sql = "SELECT u.user_id, u.name, u.image_path
+					FROM tFriends f
+					LEFT OUTER JOIN tUser u 
+					ON u.user_id = f.friend_id
+					WHERE f.user_id = $view_uid";
 	$friends_res = $conn->query($friends_sql);
 	$friends_arr = [];
 	while($friends = $friends_res->fetch_assoc()){
@@ -121,11 +134,9 @@
 		$phone = $conn->real_escape_string($_POST['phone']);
 		$address = $conn->real_escape_string($_POST['address']);
 
-		$update_sql = "
-			UPDATE tUser 
-			SET name='$name', email_id='$email', phone='$phone', address='$address'
-			WHERE user_id=$logged_user_id
-		";
+		$update_sql = "UPDATE tUser 
+					   SET name='$name', email_id='$email', phone='$phone', address='$address'
+					   WHERE user_id=$logged_user_id";
 
 		if ($conn->query($update_sql)) {
 			header("Location: " . $_SERVER['PHP_SELF']);
