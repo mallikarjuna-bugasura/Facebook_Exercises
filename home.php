@@ -14,40 +14,40 @@
 	include 'config.php';
 
 	// Fetch logged-in user details
-	$logged_user_id = $_SESSION['user_id'];
-	$logged_user_sql = "SELECT name, image_path 
+	$loggedUserId = $_SESSION['user_id'];
+	$loggedUserSql = "SELECT name, image_path 
 						FROM tUser 
-						WHERE user_id=$logged_user_id";
-	$logged_user_res = $conn->query($logged_user_sql);
-	$logged_user = $logged_user_res->fetch_assoc();
-	$logged_user_name = $logged_user['name'];
-	$logged_user_image = $logged_user['image_path'];
+						WHERE user_id=$loggedUserId";
+	$loggedUserRes = $conn->query($loggedUserSql);
+	$loggedUser = $loggedUserRes->fetch_assoc();
+	$loggedUserName = $loggedUser['name'];
+	$loggedUserImage = $loggedUser['image_path'];
 
 	// Determine which user's profile to view
-	$view_uid = $logged_user_id;
+	$viewUid = $loggedUserId;
 	if (isset($_GET['uid'])) {
-		$view_uid = intval($_GET['uid']);
+		$viewUid = intval($_GET['uid']);
 	}
 
 	// Fetch editable details of logged-in user
-	$edit_sql = "SELECT name, email_id, phone, address 
+	$editSql = "SELECT name, email_id, phone, address 
 				 FROM tUser 
-				 WHERE user_id=$logged_user_id";
-	$edit_res = $conn->query($edit_sql);
-	$edit_user = $edit_res->fetch_assoc();
+				 WHERE user_id=$loggedUserId";
+	$editRes = $conn->query($editSql);
+	$editUser = $editRes->fetch_assoc();
 
 	// Fetch details of the profile being viewed
-	$view_user_sql = "SELECT name, image_path 
+	$viewUserSql = "SELECT name, image_path 
 					  FROM tUser 
-					  WHERE user_id=$view_uid";
-	$view_user_res = $conn->query($view_user_sql);
-	$view_user = $view_user_res->fetch_assoc();
-	$view_user_name = $view_user['name'];
-	$view_user_image = $view_user['image_path'];
+					  WHERE user_id=$viewUid";
+	$viewUserRes = $conn->query($viewUserSql);
+	$viewUser = $viewUserRes->fetch_assoc();
+	$viewUserName = $viewUser['name'];
+	$viewUserImage = $viewUser['image_path'];
 
 	// Function to render a single post
-	function render_post($posts, $username, $image) {
-		$formatted_date = date("d F Y", strtotime($posts['posting_date']));
+	function renderPost($posts, $username, $image) {
+		$formattedDate = date("d F Y", strtotime($posts['posting_date']));
 		echo <<<HTML
 			<div class="post-box">
 				<div class="post-header">
@@ -56,7 +56,7 @@
 						<div class="post-details">
 							<a href="#" class="post-name">{$username}</a>
 							<img src="./images/blue.svg" alt="blue icon image" class="posts-icon">
-							<p class="post-date"><b>{$formatted_date}</b></p>
+							<p class="post-date"><b>{$formattedDate}</b></p>
 						</div>
 						<div class="three-dots">
 							<div class="dots-img">
@@ -109,22 +109,22 @@
 	}
 
 	// Fetch all posts of the viewed user
-	$post_sql = "SELECT * 
+	$postSql = "SELECT * 
 				 FROM tWall 
-				 WHERE user_id=$view_uid 
+				 WHERE user_id=$viewUid
 				 ORDER BY posting_date DESC";
-	$all_posts = $conn->query($post_sql);
+	$allPosts = $conn->query($postSql);
 
 	// Fetch friends of the viewed user
-	$friends_sql = "SELECT u.user_id, u.name, u.image_path
+	$friendsSql = "SELECT u.user_id, u.name, u.image_path
 					FROM tFriends f
 					LEFT OUTER JOIN tUser u 
 					ON u.user_id = f.friend_id
-					WHERE f.user_id = $view_uid";
-	$friends_res = $conn->query($friends_sql);
-	$friends_arr = [];
-	while($friends = $friends_res->fetch_assoc()){
-		$friends_arr[] = $friends;
+					WHERE f.user_id = $viewUid";
+	$friendsRes = $conn->query($friendsSql);
+	$friendsArr = [];
+	while($friends = $friendsRes->fetch_assoc()){
+		$friendsArr[] = $friends;
 	}
 
 	// Handle profile update
@@ -134,11 +134,11 @@
 		$phone = $conn->real_escape_string($_POST['phone']);
 		$address = $conn->real_escape_string($_POST['address']);
 
-		$update_sql = "UPDATE tUser 
+		$updateSql = "UPDATE tUser 
 					   SET name='$name', email_id='$email', phone='$phone', address='$address'
-					   WHERE user_id=$logged_user_id";
+					   WHERE user_id=$loggedUserId";
 
-		if ($conn->query($update_sql)) {
+		if ($conn->query($updateSql)) {
 			header("Location: " . $_SERVER['PHP_SELF']);
 			exit;
 		}
@@ -197,15 +197,15 @@
 
 				<!-- Profile dropdown -->
 				<span class="profiles profile-wrapper header-end">
-					<img src="<?= $logged_user_image ?>" class="right-icons profile-icon dropdown-btn" height="40" width="40">
+					<img src="<?= $loggedUserImage ?>" class="right-icons profile-icon dropdown-btn" height="40" width="40">
 					<img src="./images/drop.svg" class="drop-icon dropdown-btn">
 					<ul class="dropdown-menu-profile">
 
 						<!-- Profile card -->
 						<li class="profile-card dorpdown-lists">
 							<a href="#" id="edit_profile_btn" class="dorpdown-content">
-								<img src="<?= $logged_user_image ?>" class="dp">
-								<span><?= $logged_user_name ?></span>
+								<img src="<?= $loggedUserImage ?>" class="dp">
+								<span><?= $loggedUserName ?></span>
 							</a>
 						</li>
 
@@ -248,7 +248,7 @@
 
 			<!-- User cover/profile image -->
 			<div>
-				<img src="<?= $view_user_image ?>" alt="user image" class="mark-image">
+				<img src="<?= $viewUserImage ?>" alt="user image" class="mark-image">
 			</div>
 
 			<!-- User info and actions -->
@@ -257,7 +257,7 @@
 
 					<!-- User name and followers -->
 					<div>
-						<a href="#" class="user-name"><?= $view_user_name ?>
+						<a href="#" class="user-name"><?= $viewUserName ?>
 							<img src="./images/blue.svg" class="verify-icon">
 						</a>
 						<br>
@@ -298,7 +298,7 @@
 
 					<!-- <p><img src="./images/followings.png" class="followers-img"></p> -->
 					<div class="followers-img">
-						<?php foreach(array_slice($friends_arr, 0, 6) as $friend){ ?>
+						<?php foreach(array_slice($friendsArr, 0, 6) as $friend){ ?>
 							<img src="<?= $friend['image_path'] ?>" alt="friend image" class="follow-img">
 						<?php } ?>
 						<img src="./images/photos1.jpeg" alt="photos1" class="follow-img">
@@ -445,7 +445,7 @@
 						</div>
 
 						<!-- Add new post form -->
-						<?php if ($logged_user_id == $view_uid) { ?>
+						<?php if ($loggedUserId == $viewUid) { ?>
 							<div class="post-box add-post">
 								<form id="add_post_form">
 									<textarea name="new_post" id="new_post" placeholder="Write something..."></textarea><br>
@@ -457,7 +457,7 @@
 						
 						<!-- Display wall posts -->
 						<div id="wall_posts">
-							<?php while ($posts = $all_posts->fetch_assoc()) { render_post($posts, $view_user_name, $view_user_image); } ?>
+							<?php while ($posts = $allPosts->fetch_assoc()) { renderPost($posts, $viewUserName, $viewUserImage); } ?>
 						</div>
 					</div>
 				</div>
@@ -509,7 +509,7 @@
 					
 					<!-- Friends list -->
 					<div class="all-friends">
-						<?php foreach($friends_arr as $friends){ ?>
+						<?php foreach($friendsArr as $friends){ ?>
 							<a href="?uid=<?= $friends['user_id'] ?>" class="friend-details friend-box-link">
 								<img src="<?= $friends['image_path'] ?>" class="friend-img">
 								<span><b><?= $friends['name'] ?></b></span>
@@ -526,13 +526,13 @@
 				<h3>Edit Profile</h3>
 				<form method="POST">
 					<label>Name</label>
-					<input type="text" name="name" value="<?= $edit_user['name'] ?>" class="form-control edit-input" required>
+					<input type="text" name="name" value="<?= $editUser['name'] ?>" class="form-control edit-input" required>
 					<label>Email</label>
-					<input type="email" name="email" value="<?= $edit_user['email_id'] ?>" class="form-control edit-input" required>
+					<input type="email" name="email" value="<?= $editUser['email_id'] ?>" class="form-control edit-input" required>
 					<label>Phone</label>
-					<input type="text" name="phone" value="<?= $edit_user['phone'] ?>" class="form-control edit-input">
+					<input type="text" name="phone" value="<?= $editUser['phone'] ?>" class="form-control edit-input">
 					<label>Address</label>
-					<input type="text" name="address" value="<?= $edit_user['address'] ?>" class="form-control edit-input">
+					<input type="text" name="address" value="<?= $editUser['address'] ?>" class="form-control edit-input">
 					<div class="modal-actions">
 						<button type="submit" name="update_profile" class="save-btn">Save Changes</button>
 						<button type="button" id="close_modal" class="cancel-btn">Cancel</button>
