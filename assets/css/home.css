@@ -54,7 +54,7 @@
 	padding-left: 36px;
 	font-size: 15px;
 	font-family: Arial, sans-serif;
-	background-image: url('./images/search.svg');
+	background-image: url('../../images/search.svg');
 	background-repeat: no-repeat;
 	background-position: 12px center;
 	padding-bottom: 2px;
@@ -872,7 +872,7 @@ body {
 .likes-icons {
 	font-size: 20px;
 	opacity: 0.6;
-	background-image: url('./images/like.png');
+	background-image: url('../../images/like.png');
 	background-position: 0 -833px;
 	background-size: auto;
 	width: 20px;
@@ -884,7 +884,7 @@ body {
 .comments-icons {
 	font-size: 20px;
 	opacity: 0.6;
-	background-image: url('./images/like.png');
+	background-image: url('../../images/like.png');
 	background-position: 0 -791px;
 	background-size: auto;
 	width: 20px;
@@ -896,7 +896,7 @@ body {
 .shares-icons {
 	font-size: 20px;
 	opacity: 0.6;
-	background-image: url('./images/like.png');
+	background-image: url('../../images/like.png');
 	background-position: 0 -875px;
 	background-size: auto;
 	width: 20px;
