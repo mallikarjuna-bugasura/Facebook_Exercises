@@ -10,16 +10,31 @@
 	// Handle new post submission
 	if (!empty(trim($_POST['new_post']))) {
 		$user_id = $_SESSION['user_id'];
-		$post = $conn->real_escape_string($_POST['new_post']);
+		$post = trim($_POST['new_post']);
 
-		// Insert new post into tWall table
+		// Prepare SQL
 		$sql = "INSERT INTO tWall (user_id, post, posting_date) 
-				VALUES ($user_id, '$post', NOW())";
+				VALUES (?, ?, NOW())";
 
-		// Return status based on query result
-		if ($conn->query($sql)) {
-			echo "success";
-		} else {
+		$stmt = $conn->prepare($sql);
+
+		if ($stmt) {
+
+			// Bind parameters
+			$stmt->bind_param("is", $user_id, $post);
+
+			// Execute statement
+			if ($stmt->execute()) {
+				echo "success";
+			} else {
+				echo "error";
+			}
+
+			// Close statement
+			$stmt->close();
+		} 
+		else {
 			echo "error";
 		}
 	}
+?>

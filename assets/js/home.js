@@ -82,9 +82,9 @@ $(document).ready(function () {
 	});
 
 	// Reload page if coming back from cache
-	window.addEventListener("pageshow", function (event) {
-		if (event.persisted) {
-			window.location.reload();
+	$(window).on("pageshow", function(event) {
+		if (event.originalEvent.persisted) {
+			location.reload();
 		}
 	});
 
